@@ -1,0 +1,1009 @@
+:root {
+    --primary-color: #899fc9;
+    --dark-blue: #103771;
+    --white-color: #FFFFFF;
+    --blue-color: #C8E7F2;
+    --medium-color: #78c2de;
+    --green-color: #627254;
+}
+body[theme="dark"] {
+  --primary-color: #2f3640; /* dark blue */
+  --dark-blue: #103771; /* darker blue */
+  --white-color: #FFFFFF; /* dark gray */
+  --blue-color: #7ac6e9d3; /* dark blue-gray */
+  --medium-color: #127295; /* dark gray */
+  --green-color: #103771; /* dark green */
+  
+}
+
+body[theme="light"] {
+  --primary-color: #899fc9; /* light blue */
+  --dark-blue: #103771; /* light blue */
+  --white-color: #FFFFFF; /* white */
+  --blue-color: #C8E7F2; /* light blue-gray */
+  --medium-color: #78c2de; /* light gray-blue */
+  --green-color: #103771; /* light green */
+}
+body[theme="dark"] body,body[theme="dark"],body[theme="dark"] .description{
+  background-color: var(--primary-color); /* light gray background */
+}
+body[theme="dark"] .description span{
+  color: var(--medium-color);
+}
+body[theme="dark"] .mainBottom{
+  background-color: var(--medium-color);
+  color: var(--white-color) !important;
+}
+body[theme="dark"] .st,body[theme="dark"] .first,body[theme="dark"] .carousel,body[theme="dark"] footer{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+body[theme="dark"] footer ul.social-icons li a,body[theme="dark"] footer .social-icons i,body[theme="dark"] footer ul li a:hover,body[theme="dark"] footer ul li i{
+ color: var(--blue-color);
+}
+body[theme="dark"] footer ul.social-icons li a{
+border: 1px solid var(--blue-color);
+}
+body[theme="dark"] .aboutContainer,body[theme="dark"] .copyright{
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+body[theme="dark"] .herbsContainer{
+  background-color: var(--medium-color);
+  color: var(--white-color);
+}
+body[theme="dark"] footer ul.social-icons li:hover a {
+background-color: var(--blue-color);
+
+}
+body[theme="dark"] footer ul li a{
+  color: #6c6c6c;
+}
+
+body[theme="dark"] .productContainer{
+  background-color: var(--primary-color);
+}
+body[theme="dark"] nav .box{
+  background-color: transparent;
+}
+body[theme="dark"] .rightmin .ss p,body[theme="dark"] .aboutContainer p{
+  color: var(--white-color);
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.first{
+    width: 100%;
+    height: 10%;
+    background: var(--blue-color);
+    margin: 0%;
+    padding: 5px 0px;
+    text-align: center;
+}
+.header {
+  height: 50px;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+  color: var(--white-color);
+  height: 70px;
+  width: 100%;
+  gap: 50%;
+  position: fixed;
+}
+
+.heading {
+  font-family: "Cookie", cursive;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-size: 14px;
+  background: transparent;
+}
+
+.rightmin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-size: 13.5px;
+  background: transparent;
+}
+
+.right a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: var(--white-color);
+}
+
+.right i {
+  color: var(--dark-blue);
+}
+
+.right a:hover{
+  color: var(--green-color); 
+  font-weight: bold;
+}
+
+.right a.active {
+  font-weight: bold;
+    color: var(--green-color); /* Change to desired color */
+}
+.right button {
+  border: none;
+  cursor: pointer;
+}
+.box i {
+    display: none;
+}
+
+#theme-toggler i {
+    font-size: 20px;
+    position: absolute;
+    top: 23px;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+#theme-toggler .fi-sr-brightness {
+    opacity: 0;
+    transform: rotate(0deg);
+}
+
+body[theme="dark"] #theme-toggler .fa-moon-o {
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+body[theme="dark"] #theme-toggler .fi-sr-brightness {
+    opacity: 1;
+    transform: rotate(360deg);
+    color: var(--white-color);
+}
+
+body[theme="light"] #theme-toggler .fa-moon-o {
+    opacity: 1;
+}
+
+body[theme="light"] #theme-toggler .fi-sr-brightness {
+    opacity: 0;
+}
+
+/* main */
+.main {
+    background-image: url('../img/product2.png');
+    object-fit: cover;
+    width: 100%;
+    height: calc(100vh - 70px); /* Subtracting the height of the nav bar */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px; /* Add top padding to compensate for fixed nav */
+}
+
+.description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--white-color);
+}
+.description p {
+    font-size: small;
+    color: #ffffffc8;
+}
+.description span{
+    color: var(--dark-blue);
+}
+.mainBottom{
+    margin: auto;
+    padding: auto;
+    padding-left: 20px;
+    margin-top: 170px !important;
+    margin-bottom: -255px !important;
+    width: 80%;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    border-radius: 10px;
+    background: var(--white-color);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.11), 0 8px 8px rgba(0,0,0,0.11), 0 16px 16px rgba(0,0,0,0.11), 0 32px 32px rgba(0,0,0,0.11);
+}
+.value{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin: auto;
+}
+.value img{
+    height: 40px;
+    width: 40px;
+}
+.text1 p{
+    padding-top: 4px;
+    font-size: 13px;
+}
+.aboutContainer{
+    
+    width: 100%;
+    height: 105vh;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 0px 20px;
+    padding-top: 20px;
+    margin-top: 100px !important;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+.aboutContainer img{
+    height: 450px;
+    width: 700px;
+    object-fit: cover;
+}
+.abouttext{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 450px;
+    height: 400px;
+    text-align: left;
+    padding-top: 100px;
+}
+.abouttext p{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.781);
+}
+.about{
+    display: flex;
+    flex-direction: row;
+    height: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.abouttext h2{
+    /*color: #e3e89f;*/
+    color: var(--dark-blue);
+}
+.about hr {
+    width: 2px;  /* Set a smaller width since it will become the height after rotation */
+    height: 90px; /* Set the height to control the length of the rotated HR */
+    background-color: var(--dark-blue);
+    border: none;
+    transform: rotate(90deg);
+    margin-left: 56px;
+}
+.about p{
+    color: var(--dark-blue);
+}
+
+  .productContainer{
+    padding-top: 120px;
+    width: 100%;
+    height: 60vh;
+  }
+  .carousel {
+    background: var(--white-color);
+  }
+  .carousel img{
+    width: 80%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .carousel-cell {
+    width: 25%;
+    height: 60vh;
+    margin-right: 25px;
+    text-align: center
+  }
+  .dd{
+    margin-top: 20px;
+  }
+  .ss{
+    color: #103771 !important;
+  }
+  .ss:hover{
+    color: var(--green-color) !important; 
+  }
+  .ss.active {
+    /* styles for ss when active */
+    font-weight: bold;
+}
+
+.st.active {
+    /* styles for st when active */
+    font-weight: bold;
+}
+
+.bt i{
+  margin-top: -6px;
+}
+.st{
+    background-color: var(--white-color);
+    top: 0px;
+    color: #103771;
+    height: 50px;
+    z-index: 100;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12);
+}
+
+  .light{
+    color: #7c7b7be0;
+    font-size: 13.5px;
+  }
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+  }
+  .flickity-page-dots{
+    display: none;
+  }
+
+
+  footer {
+    color: #333;
+    margin-top: 50px;
+    padding-top: 50px;
+  }
+  
+  .row {
+    display: flex;
+    padding: 1rem;
+  }
+  
+  .column {
+    width: calc(100% / 3);
+    padding: 0 0.9375rem;
+  }
+  
+  footer h4 {
+    margin-bottom: 0.9375rem;
+    font-size: 1.5rem;
+  }
+  
+  footer p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  
+  footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+ footer ul li {
+    margin-bottom: 0.625rem;
+    list-style: none;
+  }
+  
+ footer ul li a {
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: 0.3s all ease;
+  }
+  
+  footer ul li i {
+    color: var(--dark-blue);
+  }
+  
+  footer ul li a:hover {
+    color: var(--dark-blue);
+    margin-left: 0.2rem;
+  }
+  
+  footer ul.social-icons {
+    display: flex;
+    column-gap: 0.625rem;
+  }
+  
+  footer .social-icons i {
+    color: var(--dark-blue);
+  }
+  
+  footer ul.social-icons li {
+    margin-bottom: 0rem;
+  }
+  
+  footer ul.social-icons li a {
+    display: grid;
+    place-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    border: 1.5px solid var(--dark-blue);
+  }
+  
+  footer ul.social-icons li:hover a {
+    background-color: var(--dark-blue);
+    animation: shake 0.3s ease;
+    margin-left: 0;
+  }
+  
+  footer ul.social-icons li:hover i {
+    color: #fff;
+  }
+  
+  footer .copyright {
+    text-align: center;
+    color: #fff;
+    background-color: var(--dark-blue);
+    padding: 0.6rem 0;
+  }
+  .herbsContainer{
+    width: 100%;
+    height: 90vh;
+    background-color: #eef5fe;
+    display: flex;
+    
+    flex-direction: row;
+  }
+  .herbsContainer img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .herbsmainContainer{
+   padding-top: 60px;
+  }
+  .herbsContainer .herbs{
+    width: 50%;
+    height: 100%;
+  }
+  .herbs{
+    text-align: center;
+    padding: 80px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .herb1 h2{
+    color: var(--dark-blue);
+  }
+  .herb2{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+  .herbs p{
+    margin-top: 10px;
+   font-size: 15px;
+  }
+  .herbs img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* Shake animation */
+  @keyframes shake {
+        from,
+        to {
+          transform: scale(1, 1);
+        }
+        25% {
+          transform: scale(0.9, 1.1);
+        }
+        50% {
+          transform: scale(1.1, 0.9);
+        }
+        75% {
+          transform: scale(0.95, 1.05);
+        }
+      }
+  
+  
+  /* Responsive adjustments for mobile version */
+  @media screen and (max-width: 768px) {
+    .column {
+      margin: 0.4rem 0;
+      width: 100%;
+      padding: 0;
+    }
+  
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+   footer h4 {
+      font-size: 1.3125rem;
+    }
+  
+    footer p {
+      font-size: 0.9375rem;
+    }
+  
+   footer ul li a {
+      font-size: 0.9375rem;
+    }
+  
+    footer ul.social-icons li a {
+      width: 1.975rem;
+      height: 1.975rem;
+    }
+  }
+  
+@media screen and (max-width: 1290px){
+    .mainBottom{
+        padding-top: 0px;
+    }
+    .value img{
+      margin-top: 6px;
+    }
+}
+@media screen and (max-width: 1295px){
+  body[theme="dark"] .productContainer{
+    height: 70vh;
+   }
+}
+@media screen and (max-width: 1240px){
+    .mainBottom{
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width: 1180px){
+    .aboutContainer img{
+        height: 450px;
+        width: 600px;
+    }
+}
+@media screen and (max-width: 1150px){
+  .carousel img{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1095px){
+    .aboutContainer{
+        flex-wrap: wrap;
+        gap: 0px;
+        margin-bottom: 10%;
+    }
+    .productContainer{
+      margin-bottom: 13%;
+    }
+    .abouttext{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 65%;
+        padding-top: 0px;
+        gap: 10px;
+    }
+    .aboutContainer img{
+        padding-top: 40px;
+        height: 450px;
+        width: 700px;
+    }
+   .about hr{
+    display: none;
+   }
+   body[theme="dark"] .aboutContainer{
+    height: 115vh;
+    margin-bottom: 6%;
+   }
+}
+@media screen and (max-width: 1050px){
+    .mainBottom{
+        height: 14vh;
+        width: 85%;
+    }
+    .mainBottom{
+        padding-right: 0px;
+    }
+}
+@media screen and (max-width: 1020px){
+    .mainBottom{
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width: 980px){
+    .text1 span{
+        display: none;
+    }
+    .value img{
+        margin-top: 1px;
+    }
+}
+@media screen and (max-width: 950px){
+  .carousel img{
+    width: 100%;
+    height: 240px;
+    object-position: center bottom;
+  }
+  .carousel-cell {
+    width: 25%;
+    height: 60vh;
+    margin-right: 25px;
+    text-align: center
+  }
+  .productContainer{
+    margin-bottom: 10%;
+    padding-top: 160px;
+  }
+  .dd p{
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .right{
+    margin-right: 3%;
+  }
+}
+@media screen and (max-width: 880px){
+    .value img{
+        margin-top: 4px;
+        height: 30px;
+        width: 30px;
+      }
+    .value h4{
+        font-size: 15px;
+    }
+    .mainBottom{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .value{
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 800px) {
+    nav {
+        gap: 70%;
+    }
+    .first{
+      font-size: 14px;
+    }
+    .right {
+        align-items: center;
+    }
+    .rightmin {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--white-color);
+      gap: 40px;
+      width: 100%;
+      padding: 15px;
+      height: 70px;
+      border-radius: 8px 8px 0px 0px;
+      box-shadow: 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11);
+  }
+    body[theme="dark"] .rightmin{
+      background-color: var(--primary-color);
+    } 
+    body[theme="dark"] .rightmin .box i{
+      color: var(--white-color);
+    }
+    .box i {
+        display: block;
+        font-size: 19px;
+        padding-bottom: 3px;
+    }
+
+    .box {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .right a {
+        transition: color 0.3s ease;
+    }
+
+    .right a::after {
+        content: '';
+        background-color: white;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+
+    #theme-toggler i {
+        right: 6%;
+    }
+    .mainBottom{
+        margin-bottom: -265px !important;
+        width: 100%;
+        margin-top: 270px !important;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        border-radius: 0%;
+    }
+    .aboutContainer{
+        margin-top: 10vh;
+        margin-bottom: 18%;
+    }
+  .herbsContainer{
+    flex-direction: column-reverse;
+    height: 135vh;
+  }
+
+  .herbsContainer .herbsimg{
+    width: 89%;
+    margin: auto;
+  }
+  .herbsContainer .herbs{
+    width: 100%;
+    height: 70%;
+  }
+  .herbs{
+    gap: 10px;
+  }
+  footer{
+    margin-bottom: 72px;
+  }
+}
+@media screen and (max-width: 780px) {
+    .aboutContainer img{
+        height: 450px;
+        width: 650px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .rightmin {
+        gap: 35px;
+        padding: 15px;
+        box-shadow: 0 7px 15px 0 rgba(0, 0, 0, .13), 0 1px 4px 0 rgba(0, 0, 0, .11);
+    }
+    .aboutContainer img{
+        height: 380px;
+        width: 550px;
+    }
+    .abouttext{
+        width: 80%;
+        padding-top: 0px;
+        gap: 10px;
+    }
+    .herbsContainer{
+      height: 120vh;
+    }
+    .herbsContainer .herbs {
+      width: 100%;
+      height: 40%;
+      padding-top: 0px;
+    }
+    .herbsContainer .herbsimg{
+      height: 50%;
+      margin: auto;
+      margin-top: 0%;
+    }
+}
+@media screen and (max-width: 678px) {
+ .mainBottom p{
+ display: none;
+ }
+ .value img{
+  margin-top: -5%;
+ }
+}
+@media screen and (max-width: 650px) {
+  .productContainer{
+    padding-top: 170px;
+  }
+  .herbsContainer .herbsimg{
+    width: 95%;
+    height: 46%;
+    margin-bottom: 70px;
+  }
+  .herbs img{
+    width: 80px;
+    height: 80px;
+  }
+  .herbsContainer{
+    height: 120vh;
+  }
+  .herbs{
+    margin-bottom: 60px;
+    gap: 40px;
+  }
+  .carousel-cell {
+    width: 30%;
+    height: 60vh;
+    margin-right: 35px;
+    text-align: center
+  }
+  .carousel{
+   height: 50vh;
+   padding-left: 20px;
+   padding-right: 20px;
+  }
+  .carousel .flickity-page-dots li{
+    width: 7px;
+    height: 7px;
+  }
+  body[theme="dark"] .carousel .flickity-page-dots li.is-selected{
+    background-color: var(--white-color);
+  }
+  body[theme="dark"] .carousel .flickity-page-dots li{
+    background-color: #dfdddd;
+  }
+  .carousel .flickity-page-dots{
+    width: auto;
+    text-align: center;
+    margin-left: 29%;
+  }
+ .carousel button{
+  display: none;
+ }
+ .flickity-page-dots{
+  display: block;
+ }
+}
+@media screen and (max-width: 630px) {
+  .productContainer{
+    padding-top: 180px;
+  }
+  .carousel-cell {
+    width: 40%;
+    height: 60vh;
+    margin-right: 35px;
+    text-align: center
+  }
+  .carousel .flickity-page-dots li{
+    width: 6px;
+    height: 6px;
+  }
+ 
+}
+@media screen and (max-width: 600px) {
+    .aboutContainer img{
+        height: 340px;
+        width: 500px;
+    }
+    .abouttext{
+        width: 85%;
+    }
+    .herbsContainer h4{
+      font-size: 14px;
+    }
+    .abouttext p,.herbsContainer p,.row p,.column a,.copyright{
+        font-size: 13.5px;
+    }
+    .row h4{
+      font-size: 16px;
+    }
+    .aboutContainer button{
+        font-size: 13.5px;
+        height: 15px;
+        width: 150px;
+        font-weight: 400;
+        padding: 10px 20px;
+        }
+}
+@media screen and (max-width: 550px) {
+  .mainBottom{
+    height: 20vh;
+    margin-top: 280px !important;
+  }
+   .value{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   }
+   .value p{
+    display: block;
+    font-size: 12px;
+   }
+   .herbsContainer .herbsimg{
+    height: 40%;
+    margin-bottom: 80px;
+  }
+  .aboutContainer{
+    margin-bottom: 5%;
+  }
+ }
+@media screen and (max-width: 525px) {
+    .aboutContainer img{
+        height: 310px;
+        width: 430px;
+    }
+    .abouttext{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .aboutContainer{
+      margin-bottom: 0%;
+    }
+}
+@media screen and (max-width: 485px) {
+  .productContainer{
+    padding-top: 190px;
+  }
+  .carousel img{
+    width: 100%;
+    height: 200px;
+    object-position: center bottom;
+  }
+  .carousel-cell {
+    width: 45%;
+    height: 50vh;
+    margin-right: 15px;
+    margin-left: 25px;
+    text-align: center
+  }
+  .carousel{
+    height: 45vh;
+   padding-left: 12px;
+   padding-right: 12px;
+  }
+  .carousel .flickity-page-dots{
+    margin-left: 26%;
+  }
+  .mainBottom{
+    margin-top: 275px !important;
+  }
+}
+@media screen and (max-width: 466px) {
+.aboutContainer img{
+  width: 105%;
+}
+.aboutContainer{
+  margin-top: 5vh;
+}
+
+}
+@media screen and (max-width: 460px) {
+  .value p{
+    display: none;
+  }
+  .value h4{
+    font-size: 14px;
+    color: rgb(53, 49, 49);
+  }
+ 
+  .mainBottom{
+    height: 15vh;
+    margin-top: 240px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .carousel .flickity-page-dots{
+    margin-left: 24%;
+  }
+}
