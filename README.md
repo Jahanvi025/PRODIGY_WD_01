@@ -1,5 +1,5 @@
 # PRODIGY_WD_01
-Skin Products Landing Page
+Skin Products Landing Page - https://jahanvi025.github.io/PRODIGY_WD_01/
 
 # Introduction
 Welcome to the Skin Products Landing Page! This project is designed to provide a beautiful, responsive landing page for promoting skin care products. The landing page includes sections for featured products, an about section, products, and herbs used.
